@@ -3,9 +3,9 @@ from rest_framework import serializers
 from .models import *
 
 class DataSerializer(serializers.ModelSerializer):
-    money = serializers.IntegerField()
-    upgrade1 = serializers.IntegerField()
+    name = serializers.CharField()
+    url = serializers.URLField()
 
     class Meta:
         model = Data
-        fields = ['money','upgrade1']
+        fields = ['name','url']

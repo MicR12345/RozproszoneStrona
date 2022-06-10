@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'embed_video',
     'Strona.apps.StronaConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -56,7 +57,9 @@ ROOT_URLCONF = 'SR_Strona.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR.joinpath('templates')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -133,3 +136,6 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 5
 }
+
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
