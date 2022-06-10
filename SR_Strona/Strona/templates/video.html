@@ -2,13 +2,12 @@
 {% block page_content %}
 
     {% for vid in data %}
-	<div  class="container center-text">
-<h1>
-  {{ vid.name }}
+<div  class="container center-text">
+<h1 style ="color: white">{{ vid.name }}
 </h1>
-        {% video vid.url "large" %}
+        {% video vid.url "huge" %}
 <form action="{% url 'data-detail' pk=vid.pk %}" method="GET">{% csrf_token %}
     <input type="submit" value="Edytuj" />
-</form>
-        {% endfor %}
+</form></div>
+{% endfor %}
 {%endblock%}
